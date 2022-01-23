@@ -5,9 +5,9 @@ using UnityEngine;
 public class DrumMachineUI : MonoBehaviour
 {
     [SerializeField] List<GameObject> BeatMarkers = new List<GameObject>();
-    
 
-    private int m_currentBeat;
+
+    private int m_currentBeat = 0;
 
     // Start is called before the first frame update
     void Start()
