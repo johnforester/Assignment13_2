@@ -12,7 +12,7 @@ public class DrumMachineUI : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        foreach(GameObject beatMarker in BeatMarkers)
+        foreach (GameObject beatMarker in BeatMarkers)
         {
             beatMarker.SetActive(false);
         }
@@ -26,6 +26,11 @@ public class DrumMachineUI : MonoBehaviour
 
     public void BeatChanged(int beat)
     {
+        if (beat < 0 || beat >= BeatMarkers.Count)
+        {
+            return;
+        }
+
         BeatMarkers[m_currentBeat].SetActive(false);
         m_currentBeat = beat;
         BeatMarkers[m_currentBeat].SetActive(true);
